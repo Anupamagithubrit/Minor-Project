@@ -1,21 +1,30 @@
 import React from 'react'
 
-import TestPdf from '../topicwisenotes/6th Sem Timetable.pdf'
-
 const topicwisenotes = () => {
   return (
     <div>
-        <a href={TestPdf} target="_blank">Topic 1</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 2</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 3</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 4</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 5</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 6</a>
+        <ol>
+        <li>
+          <a href="https://drive.google.com/file/d/1l0ucGKGjqxGo_86NTnWfw9TN3Hkcjuja/view?usp=share_link" target="_blank" rel='noreferrer'>Three Phase AC</a>
+          <br/>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/1JDMCoYB7zj7SMetFcxehl0SRNJ5norxm/view?usp=share_link" target="_blank" rel='noreferrer'>Illumination</a>
+          <br/>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/1JDMCoYB7zj7SMetFcxehl0SRNJ5norxm/view?usp=share_link" target="_blank" rel='noreferrer'>AC Fundamentals</a>
+          <br/>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/1vj50P-l3lecHws3TgkqqfEN7Ijz4hURn/view?usp=share_link" target="_blank" rel='noreferrer'>Complete Notes</a>
+          <br/>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/104Vlwa7SFcgPXFttSGZ_beULrujkD0AQ/view?usp=share_link" target="_blank" rel='noreferrer'>Notes</a>
+          <br/>
+        </li>
+      </ol>
     </div>
   )
 }

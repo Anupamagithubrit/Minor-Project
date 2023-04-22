@@ -1,24 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const bio = () => {
+const Afl = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Biology
-        </h1>
-        <a href="/sem1/bio/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem1/bio/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem1/bio/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem1/bio/previousyearpapers">Previous Year Papers</a>
-        <br/>
-        <a href="/sem4/afl/calc">calculators</a>
-        <br/>
-
+      <h1>AFL</h1>
+      <a href="/sem4/afl/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/58N2N7zJGrQ"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default bio;
+export default Afl;

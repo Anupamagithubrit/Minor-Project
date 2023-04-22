@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const maths1 = () => {
+const Maths1 = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Mathematics
-        </h1>
-        <a href="/sem1/maths1/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="https://youtu.be/eTp5wq-cSXY" target='_blank' rel='noreferrer'>Youtube Videos</a>
-        <br/>
-
+      <h1>Mathematics</h1>
+      <a href="/sem1/maths1/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/eTp5wq-cSXY"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default maths1
+export default Maths1;

@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const cn = () => {
+const Cn = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Computer networks
-        </h1>
-        <a href="/sem5/cn/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem5/cn/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem5/cn/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem5/cn/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>Computer networks</h1>
+      <a href="/sem5/cn/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/VwN91x5i25g"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default cn;
+export default Cn;

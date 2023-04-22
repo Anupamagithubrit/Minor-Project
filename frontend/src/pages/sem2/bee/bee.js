@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const bee = () => {
+const Bee = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Basic Electrical Engineering
-        </h1>
-        <a href="/sem2/bee/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem2/bee/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem2/bee/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem2/bee/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>Basic Electrical Engineering</h1>
+      <a href="/sem2/bee/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/2h7yeGJkYW4"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default bee;
+export default Bee;

@@ -1,22 +1,31 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const dsa = () => {
+const Dsa = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Data Structures and Algorithms
-        </h1>
-        <a href="/sem3/dsa/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem3/dsa/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem3/dsa/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem3/dsa/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>Data Structures and Algorithms</h1>
+      <a href="/sem3/dsa/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/xLetJpcjHS0"
+          allowFullScreen
+        ></iframe>
+      )}
+      <br />
     </div>
-  )
-}
+  );
+};
 
-export default dsa
+export default Dsa;

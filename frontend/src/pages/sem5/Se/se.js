@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const se = () => {
+const Se = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Software Engineering
-        </h1>
-        <a href="/sem5/se/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem5/se/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem5/se/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem5/se/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>Software Engineering</h1>
+      <a href="/sem5/se/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/uJpQlyT_CK4"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default se;
+export default Se;

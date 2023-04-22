@@ -4,6 +4,8 @@ const sem4 = () => {
   return (
     <div>
         <h1>4th Semester</h1>
+        <a href="sem4/afl">AFL</a>
+        <br/>
         <a href="sem4/coa">COA</a>
         <br/>
         <a href="sem4/dbms">DBMS</a>

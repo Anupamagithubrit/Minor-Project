@@ -8,11 +8,6 @@ const oslab = () => {
         </h1>
         <a href="/sem4/oslab/experiments">Experiments</a>
         <br/>
-        <a href="/sem4/oslab/vivaquestions">Viva Questions</a>
-        <br/>
-        <a href="/sem4/oslab/experimentyoutubevideos">Experiment Youtube Videos</a>
-        <br/>
-
     </div>
   )
 }

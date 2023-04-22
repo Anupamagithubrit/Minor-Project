@@ -1,22 +1,31 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const dms = () => {
+const Dms = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            Discrete Mathematics
-        </h1>
-        <a href="/sem3/dms/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem3/dms/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem3/dms/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem3/dms/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>Discrete Mathematics</h1>
+      <a href="/sem3/dms/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/wGLTV8MgLlA"
+          allowFullScreen
+        ></iframe>
+      )}
+      <br />
     </div>
-  )
-}
+  );
+};
 
-export default dms
+export default Dms;

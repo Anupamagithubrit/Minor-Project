@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const hpc = () => {
+const Hpc = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleYouTubeClick = () => {
+    setShowVideo(!showVideo);
+  };
   return (
     <div>
-        <h1>
-            High Perdormance Computing
-        </h1>
-        <a href="/sem5/hpc/topicwisenotes">Topic Wise Notes</a>
-        <br/>
-        <a href="/sem5/hpc/topicwisequestions">Topic Wise Questions</a>
-        <br/>
-        <a href="/sem5/hpc/topicwiseyoutubevideos">Topic Wise Youtube Videos</a>
-        <br/>
-        <a href="/sem5/hpc/previousyearpapers">Previous Year Papers</a>
-        <br/>
-
+      <h1>High Perdormance Computing</h1>
+      <a href="/sem5/hpc/topicwisenotes">Topic Wise Notes</a>
+      <br />
+      <a href="#" onClick={handleYouTubeClick}>
+        {showVideo ? "Close Youtube Video" : "Open Youtube Video"}
+      </a>
+      <br />
+      {showVideo && (
+        <iframe
+          width={450}
+          height={225}
+          src="https://youtu.be/79jKJvFAKuY"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default hpc;
+export default Hpc;

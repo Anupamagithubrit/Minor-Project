@@ -1,23 +1,21 @@
-import React from 'react'
-
-import TestPdf from './6th Sem Timetable.pdf'
+import React from "react";
 
 const topicwisenotes = () => {
   return (
     <div>
-        <a href={TestPdf} target="_blank">Topic 1</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 2</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 3</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 4</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 5</a>
-        <br/>
-        <a href={TestPdf} target="_blank">Topic 6</a>
+      <ol>
+        <li>
+          <a
+            href="https://drive.google.com/file/d/1DEoVb12LwDmLIScIZHQNkh19ycyCosG7/view?usp=drivesdk"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Notes
+          </a>
+        </li>
+      </ol>
     </div>
-  )
-}
+  );
+};
 
-export default topicwisenotes
+export default topicwisenotes;
